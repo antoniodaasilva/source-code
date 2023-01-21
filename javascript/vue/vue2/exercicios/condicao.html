@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../vue.js"></script>
+
+</head>
+
+<body>
+
+  <div id="app">
+    <p>Carrinho <span>{{carrinho}}</span></p>
+    <p>Produto: {{estoque}}</p>
+    <button v-show="estoque" @click="add">+</button>
+    <button v-show="carrinho" @click="remove">-</button>
+    <p v-show="estoque === 0" >Não temos mais estoque</p>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        carrinho: 0,
+        estoque: 7
+      },
+      methods: {
+        add() {
+          this.carrinho++
+          this.estoque--
+        },
+        remove() {
+          this.carrinho--
+          this.estoque++
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

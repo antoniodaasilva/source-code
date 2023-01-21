@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../vue.js"></script>
+
+</head>
+
+<body>
+
+  <div id="app">
+    <ul>
+      <li v-for="(curso, index) in cursos">{{curso}}</li>
+    </ul>
+    <ul>
+      <li v-for="{nome ,populacao}, key in estados" :key="populacao">
+        <p>{{nome}}</p>
+        <p>{{populacao}}</p>
+      </li>
+    </ul>
+    <div v-for="n in 10">
+      {{10}}
+    </div>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        cursos: ["HTML", "CSS", "JavaScript", "PHP", "Java", "NodeJs", "DenoJs"],
+        estados: {
+          sp: {
+            populacao: "45 milhões",
+            nome: "São Paulo"
+          },
+          rj: {
+            populacao: "17 milhões",
+            nome: "São Paulo"
+          },
+          mg: {
+            populacao: "5 milhões",
+            nome: "São Paulo"
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../vue.js"></script>
+
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    body {
+      background: #ccc;
+      font-family: sans-serif;
+    }
+
+    header {
+      height: 80px;
+      background: rgb(117, 77, 3);
+      display: flex;
+      align-items: center;
+      padding: 24px 114px;
+    }
+
+    nav {
+      background: rgb(61, 41, 2);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav ul a {
+      color: #fff;
+
+    }
+
+    nav button {
+      background: transparent;
+      color: red;
+      font-size: 22px;
+      padding: 12px;
+      border: none;
+
+    }
+
+    .name {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .home {
+      height: 500px;
+      width: 500px;
+      background: brown;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="app">
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Register</a>
+          </li>
+        </ul>
+  
+        <div class="name">
+          {{cor}}
+        </div>
+  
+        <button @click="login">Login</button>
+      </nav>
+      
+    </header>
+  
+    <main>
+      <label for="name">Escolha sua cor</label>
+      <input v-model="cor" type="color" name="name" id="">
+
+      <div :style="{background: cor}" class="home">
+        <button>A</button>
+      </div>
+    </main>
+</div>
+
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        cor: "",
+        login: "Logado"
+      }
+    })
+  </script>
+</body>
+
+</html>

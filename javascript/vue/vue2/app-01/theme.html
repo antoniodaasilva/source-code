@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../vue.js"></script>
+
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    body {
+      font-family: sans-serif;
+      height: 100vw;
+    }
+
+    header {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: brown;
+    }
+
+    button {
+      padding: 10px 50px;
+      border-radius: 8px;
+    }
+
+    main {
+      height: 100vh;
+      width: 100%;
+    }
+
+    .light {
+      background: #ccc;
+    }
+
+    .dark {
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <header>
+      <button @click="toogle = !toogle">{{toogle ? 'dark' : 'light'}}</button>
+
+    </header>
+
+    <main :class="toogle ? 'light' : 'dark'"></main>
+  </div>
+
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        toogle: true
+      },
+      methods: {
+        defineDarkTheme() {
+          this.theme = 'dark'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

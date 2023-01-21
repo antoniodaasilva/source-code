@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../vue.js"></script>
+
+</head>
+
+<body>
+
+  <div id="app">
+    <button @click="handleClick" >Clique</button>
+    {{clique}}
+    <main>
+      <p @keyup.a="handleEvent">A</p>
+      <input type="text" @keyup="handleEvent">
+    </main>
+  </div>
+
+  <script>
+    const vm = new Vue({
+      el: "#app",
+      data: {
+        clique: 0
+      },
+      methods: {
+        handleClick() {
+          console.log('clicado');
+          this.clique++
+        },
+        handleEvent(event) {
+          console.log(event.key);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
