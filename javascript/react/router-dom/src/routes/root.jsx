@@ -6,7 +6,7 @@ export async function loader() {
   return { contacts }
 }
 
-export function Root() {
+export default function Root() {
   const { contacts } = useLoaderData()
 
   return (

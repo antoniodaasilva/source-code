@@ -1,0 +1,39 @@
+Oi! Curtindo seus estudos até aqui?
+
+
+Esse post é só pra avisar que, no último exercício da próxima aula, mais ou menos aos 22:42, eu começo a mostrar como refatorar, uma template string através da declaração de duas consts para melhorar a legibilidade do código.
+
+
+Ao declarar as duas consts, eu inverti os nomes delas.
+
+
+O correto é que a const evenNumbersString armazene a expressão que resulta na string com os números pares e a const oddNumbersString armazene a expressão que resulta na string com os números ímpares.
+
+
+Ficaria assim:
+
+
+const oddNumbersString = oddNumbers.join(', ').replace(', 3', ' e 3')
+
+const evenNumbersString = evenNumbers.join(', ').replace(', 5', ' e 5')
+
+
+console.log(`Numeros ímpares: ${oddNumbersString}. Números pares: ${evenNumbersString}.`)
+
+
+Foi apenas um erro no momento de nomear as consts, mas pode confundir alguém.
+
+
+Se mesmo com este aviso houverem dificuldades em entender essa parte (ou qualquer outra) da revisão, é só abrir uma issue no repositório do curso, linkado aqui abaixo e eu te ajudarei a esclarecer as suas dúvidas.
+
+
+Estou aqui para te ajudar em sua jornada rumo à fluência em JavaScript. No que for preciso. Conte comigo =)
+
+
+Atenciosamente,
+
+
+Roger
+
+
+PS: agradecimentos ao Fernando Junior, que me notificou sobre o ocorrido =D

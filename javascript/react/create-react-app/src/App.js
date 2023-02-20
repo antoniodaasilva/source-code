@@ -1,3 +1,5 @@
+import { Header } from "./Header";
+
 export function App() {
   const luana = {
     cliente: 'Luana',
@@ -54,6 +56,7 @@ export function App() {
 
   return (
     <div> 
+      <Header/>
       <p>Nome: {dados.cliente }</p>
       <p>Idade: {dados.idade}</p> 
       <p>Situação: <span style={dados.ativa ? { color: 'green' } : { color: 'red' }}>{dados.ativa ? 'Ativa' : 'Inativo'}</span></p>
@@ -70,7 +73,8 @@ export function App() {
             <p>Preco: {preco}</p>
             <ul>
               {
-                cores.map(cor => <li style={{background: cor, color: '#fff''}} key={cor}>{cor}</li>)
+                cores.map(
+                  cor => <li style={{background: cor, color: '#fff'}} key={cor}>{cor}</li>)
               }
             </ul>
           </div>)

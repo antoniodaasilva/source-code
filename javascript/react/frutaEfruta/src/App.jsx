@@ -1,16 +1,17 @@
-import { Navbar, Nav, Container } from "react-bootstrap"
+import { Navbar, Nav, Container, Carousel } from "react-bootstrap"
+import './App.css'
 
 export function App() {
 
   return (
     <div className="App">
-      <Navbar bg="light" variant="light">
+      <Navbar bg="light" variant="light" className="fixed-top">
         <Container>
           <Navbar.Brand href="#home">
             Fruta & Fruto
           </Navbar.Brand>
-          <Nav.Item className="bg-primary ">
-            <Nav className="me-auto ">
+          <Nav.Item className="">
+            <Nav className="">
               <Nav.Link href="#">Inicio</Nav.Link>
               <Nav.Link href="#">Receitas</Nav.Link>
               <Nav.Link href="#">Quem Somos</Nav.Link>
@@ -20,10 +21,28 @@ export function App() {
         </Container>
       </Navbar>
 
-      <title>fruto & fruta</title>
-
-      <h1>Reaproveite melhor os alimentos!</h1>
-      <h1>Economize e ganhe em saúde!</h1>
+      <Carousel>
+        <Carousel.Item interval={3000}>
+          <img
+            className="d-block w-100 img-carrossel"
+            src="/carrossel-img1.jpg"
+            alt="First slide"
+          />
+          <Carousel.Caption className="h-50">
+            <h1 className="font-titulo display-5">Reaproveite melhor os alimentos!</h1>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={500}>
+          <img
+            className="d-block w-100 img-carrossel"
+            src="/carrossel-img2.jpg"
+            alt="Second slide"
+          />
+          <Carousel.Caption className="h-50">
+            <h1 className="font-titulo display-5">Economize e ganhe em saúde!</h1>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
 
       <h2>Receitas para economizar e ganhar saúde</h2>
       <h2>Nossas receitas ajudam você a aproveitar melhor os alimentos, economizar, ganhar tempo e praticidade</h2>
