@@ -6,7 +6,7 @@ import { Button } from '../../components/Button';
 import { Link } from "react-router-dom";
 
 
-export function SignUp() {
+export function SigUp() {
   return(
     <Container>
       <Background />
