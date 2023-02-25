@@ -15,6 +15,4 @@ func main() {
 	fmt.Println(menos)
 	fmt.Println(divisao)
 	fmt.Println(multiplicacao)
-
-
 }
