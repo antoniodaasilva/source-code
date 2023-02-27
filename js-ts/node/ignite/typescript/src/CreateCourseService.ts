@@ -1,6 +1,6 @@
 interface Course {
   name: string;
-  duration: number;
+  duration?: number;//TIPO OPCIONAL
   educator: string;
 }
 
@@ -10,7 +10,7 @@ class CreateCourseService {
     console.log(data.name, data.duration, data.educator);
   }
 
-  executeTwo({duration, educator, name}: Course) {
+  executeTwo({duration = 8, educator, name}: Course) {
     console.log(duration, educator, name);
     
   }
