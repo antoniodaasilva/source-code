@@ -7,6 +7,7 @@ const PORT = 3333;
 app.use(express.json());
 
 app.get("/", (req, res) => {
+
   res.send("Hello world");
 });
 
