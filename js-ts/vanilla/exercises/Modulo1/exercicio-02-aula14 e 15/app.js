@@ -17,7 +17,7 @@
 
 Utilize os espaços entre os comentários abaixo para executar os códigos dos exercícios. Inclusive este.
 */
-
+console.log("Grandes poderes trazem grandes responsabilidades.");
 
 
 /*
@@ -29,7 +29,11 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos e
 - Declare uma constante "myFavoriteTom" que recebe nome, espaço, e sobrenome do Tom que você mais gosta;
 - Exiba a "myFavoriteTom" no console do browser.
 */
-
+const tom = "Tom";
+const firstTom = "Hanks";
+const secondTom = "Cruise";
+const myFavoriteTom = `${tom} ${secondTom}`;
+console.log(myFavoriteTom);
 
 
 /*
@@ -40,8 +44,11 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos e
 - As letras não devem ser digitadas manualmente;
 - Exiba a "js" no console do browser;
 */
-
-
+const programmingLanguage = "JavaScript";
+const j = programmingLanguage.slice(0, 1)
+const s = programmingLanguage.slice(4, 5);
+const js = j + s
+console.log(js);
 
 /*
 06 - Comente o console.log acima, e,
