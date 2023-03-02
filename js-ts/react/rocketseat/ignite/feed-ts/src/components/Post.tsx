@@ -22,7 +22,6 @@ interface postProps {
 }
 
 
-
 export function Post({ author, content, publishedAt }: postProps) {
   const [comments, setComments] = useState(['Ola'])
 
@@ -71,6 +70,7 @@ export function Post({ author, content, publishedAt }: postProps) {
         <div className={styles.author}>
           <Avatar
             src={author.avatarUrl}
+            hasBorder
           />
 
           <div className={styles.authorInfo}>
