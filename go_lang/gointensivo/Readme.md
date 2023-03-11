@@ -15,3 +15,10 @@ err := order.Validate()
 		return nil, err
 	}
 	return order, nil
+
+	A palavra "go" antes de uma tarefa incia o multthreading
+
+
+docker-compose up -d
+docker-compose exec goapp bash
+go run cmd/consumer/main.go
