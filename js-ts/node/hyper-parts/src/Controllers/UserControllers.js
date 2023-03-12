@@ -1,9 +1,8 @@
 class UserControllers {
   create(req, res) {
+    const id = 5;
 
-    
-
-    res.send('Usario criado com sucesso!')
+    res.json({ id: id })
   }
 }
 
