@@ -215,3 +215,39 @@ div#btns a#btnYes:hover {
   background: #00aa2a;
   color: #fff;
 }
+
+.message {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-danger {
+  background: rgb(255, 197, 197);
+  color: #8a0000;
+}
+
+.message-success {
+  background: rgb(197, 255, 214);
+  color: #008a1e;
+}
+
+span#close-message {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .3s;
+  padding-left: 2rem;
+}
+
+span#close-message:hover {
+  color: #ff0000;
+}
