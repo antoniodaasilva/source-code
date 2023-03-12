@@ -24,7 +24,7 @@ const createTasks = async (req, res) => {
     await Task.create(task);
     return res.redirect("/");
   } catch (error) {
-    return res.status(500).send({ error: err.message });
+    return res.status(500).send({ error: error.message });
   }
 };
 
@@ -39,7 +39,7 @@ const getById = async (req, res) => {
       res.render("index", { task: null, taskDelete, tasksList });
     }
   } catch (error) {
-    return res.status(500).send({ error: err.message });
+    return res.status(500).send({ error: error.message });
   }
 };
 
@@ -49,7 +49,7 @@ const updateOneTask = async (req, res) => {
     await Task.updateOne({ _id: req.params.id }, task);
     res.redirect("/");
   } catch (error) {
-    return res.status(500).send({ error: err.message });
+    return res.status(500).send({ error: error.message });
   }
 };
 
@@ -58,7 +58,7 @@ const deleteOneTask = async (req, res) => {
     await Task.deleteOne({ _id: req.params.id });
     res.redirect("/");
   } catch (error) {
-    return res.status(500).send({ error: err.message });
+    return res.status(500).send({ error: error.message });
   }
 };
 
