@@ -10,7 +10,7 @@ const connectToDb = () => {
       }
     )
     .then(() => console.log("MongoDB Atlas CONECTADO!"))
-    .catch((err) => console.log(err));
+    .catch((error) => console.log(`Error on connection ${error}`));
 };
 
 module.exports = connectToDb;
