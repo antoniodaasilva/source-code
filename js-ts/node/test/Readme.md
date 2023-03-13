@@ -41,3 +41,5 @@
 
 Adicionar mongoose
 npm i mongoose
+
+npm i dotenv -D
