@@ -2,6 +2,9 @@
   // echo $_GET['email'];//superglobal
   // echo $_GET['senha'];
 
+  session_start();
+  
+
   $usrAutenticado = false;
 
   $usuario_app = array(
@@ -24,8 +27,12 @@
 
   if ($usrAutenticado) {
     echo 'Autenticado';
+    $_SESSION['autenticado'] = 'SIM';
+    header('Location: home.php');
   } else {
+    $_SESSION['autenticado'] = 'NAO';
     header('Location: index.php?login=erro');
+
   }
   
 ?>
