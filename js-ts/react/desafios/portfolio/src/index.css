@@ -1,0 +1,13 @@
+:root {
+  font-size: 62.5%;
+
+  --body-bg-color: #22212C;
+  --text-color: #837E9F;
+  --bg-cards: #302F3D;
+  --bg-techs: #CB92B1;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--body-bg-color);
+}
