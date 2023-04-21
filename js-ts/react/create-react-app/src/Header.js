@@ -10,7 +10,11 @@ export const Header = () => {
         <li>
           <a href='/produtos'>Produtos</a>
         </li>
+        <li>
+          <a href='/register'>Registro</a>
+        </li>
       </ul>
+
     </header>
   )
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Header } from "./Header";
 import { Home } from "./Home";
 import { Produtos } from "./Produtos";
+import { RegisterForm } from "./RegisterForm";
 
 export const Main = () => {
 
@@ -10,10 +11,12 @@ export const Main = () => {
   const {pathname} = window.location
   let Pagina
 
-  if (pathname === "/produtos") {
-    Pagina = Produtos
-  } else {
+  if (pathname === "/") {
     Pagina = Home
+  } else if (pathname === "/produtos") {
+    Pagina = Produtos
+  } else if (pathname === "/register") {
+    Pagina = RegisterForm
   }
 
 
