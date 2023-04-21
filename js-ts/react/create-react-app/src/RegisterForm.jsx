@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Textarea } from "./Textarea";
+import { Select } from "./Select";
+import { Radio } from "./Radio";
+import { Checkbox } from "./Checkbox";
 
 const formFields = [
   {
@@ -96,6 +99,9 @@ export function RegisterForm() {
         </div>
       ))}
       <Textarea />
+      <Select />
+      <Radio />
+      <Checkbox />
       {response && response.ok && <p>Formulário Enviado</p>}
       <button>Enviar</button>
     </form>
