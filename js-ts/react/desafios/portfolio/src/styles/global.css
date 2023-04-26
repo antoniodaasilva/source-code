@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-size: 62.5%;
 
@@ -5,6 +11,7 @@
   --text-color: #837E9F;
   --bg-cards: #302F3D;
   --bg-techs: #CB92B1;
+  --green-100: #00FF00;
 }
 
 body {

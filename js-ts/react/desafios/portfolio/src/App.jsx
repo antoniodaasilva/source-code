@@ -1,28 +1,12 @@
 import "./App.css";
-import { Card } from "./components/Card";
+import { Avatar } from "./components/Avatar";
 
 export function App() {
   return (
-    <div className="container">
-      <div className="card">
-        <div>
-          <img src="https://github.com/antoniodebrito.png" alt="" />
-
-          <p>
-            Antonio Brito
-          </p>
-
-          <p>
-            Front End Developer
-          </p>
-        </div>
-
-        <Card />
-      </div>
-
-      <div>
-
-      </div>
+    <div>
+      <aside className="cardContainer">
+        <Avatar />
+      </aside>
     </div>
   );
 }

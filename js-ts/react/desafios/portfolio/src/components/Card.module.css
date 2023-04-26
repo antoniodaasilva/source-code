@@ -1,5 +1,31 @@
 .cardContainer {
-  background: yellow;
-  width: 60px;
-  height: 60px;
+  padding: 4rem;
+  background: #302F3D;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 34.8rem;
+}
+
+.card {
+
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 29px;
+
+  color: #837E9F;
+
+  padding-top: 3.2rem;
+  padding-inline: 7.6rem;
+  display: flex;
+
+  text-align: center;
+  justify-content: center;
+}
+
+.card img {
+  width: 12.8rem;
+  height: 12.8rem;
+  border-radius: 50%;
 }
