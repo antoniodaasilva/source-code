@@ -5,6 +5,7 @@ import { GlobalStyles } from "./styles/global";
 export function App() {
   return (
       <ThemeProvider theme={defaultTheme}>
+        ola
         <GlobalStyles />
       </ThemeProvider>
     )
