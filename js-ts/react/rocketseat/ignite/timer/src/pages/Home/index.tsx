@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { differenceInSeconds } from "date-fns";
 
-import { Play } from "phosphor-react";
+import { HandPalm, Play } from "phosphor-react";
 import {
   CountdownContainer,
   FormContainer,
@@ -11,6 +11,7 @@ import {
   MinutesAmountInput,
   Separator,
   StartCountdownButton,
+  StopCountdownButton,
   TaskInput,
 } from "./styles";
 import { useEffect, useState } from "react";
@@ -29,7 +30,9 @@ interface Cycle {
   id: string;
   task: string;
   minutesAmount: number;
-  startDate: Date
+  startDate: Date;
+  interruptedDate?: Date;
+  finishedDate?: Date;
 }
 
 export function Home() {
@@ -47,23 +50,42 @@ export function Home() {
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId);
 
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0;
+
   useEffect(() => {
     let interval: number;
 
     if (activeCycle) {
       interval = setInterval(() => {
-        setAmountSecondsPassed(
-          differenceInSeconds(new Date(), activeCycle.startDate)
+        const secondsDifference = differenceInSeconds(
+          new Date(),
+          activeCycle.startDate
         );
+
+        if (secondsDifference >= totalSeconds) {
+          setCycles((state) =>
+            state.map((cycle) => {
+              if (cycle.id === activeCycleId) {
+                return { ...cycle, finishedDate: new Date() };
+              } else {
+                return cycle;
+              }
+            })
+          );
+
+          setAmountSecondsPassed(totalSeconds)
+
+          clearInterval(interval);
+        } else {
+          setAmountSecondsPassed(secondsDifference);
+        }
       }, 1000);
     }
 
     return () => {
-      clearInterval(interval)
-    }
-
-  }, [activeCycle]);
-
+      clearInterval(interval);
+    };
+  }, [activeCycle, totalSeconds, activeCycleId]);
 
   function handleCreateNewCycle(data: NewCycleFormData) {
     const id = String(new Date().getTime());
@@ -72,7 +94,7 @@ export function Home() {
       id: id,
       task: data.task,
       minutesAmount: data.minutesAmount,
-      startDate: new Date()
+      startDate: new Date(),
     };
     setCycles((state) => [...state, newCycle]);
     setActiveCycleId(id);
@@ -81,15 +103,28 @@ export function Home() {
     reset();
   }
 
-  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0;
+  function handleInterruptCycle() {
+    setCycles((state) =>
+      state.map((cycle) => {
+        if (cycle.id === activeCycleId) {
+          return { ...cycle, interruptedDate: new Date() };
+        } else {
+          return cycle;
+        }
+      })
+    );
+
+    setActiveCycleId(null);
+  }
+
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0;
 
   const minutesAmount = Math.floor(currentSeconds / 60);
   const secondsAmount = currentSeconds % 60;
 
-  const minutes = String(minutesAmount).padStart(2, '0');
+  const minutes = String(minutesAmount).padStart(2, "0");
   const seconds = String(secondsAmount).padStart(2, "0");
-  
+
   useEffect(() => {
     if (activeCycle) {
       document.title = `${minutes}:${seconds}`;
@@ -107,6 +142,7 @@ export function Home() {
           <TaskInput
             type="text"
             id="task"
+            disabled={!!activeCycle}
             placeholder="Dê um nome para o seu projeto"
             list="task-suggestions"
             {...register("task")}
@@ -124,6 +160,7 @@ export function Home() {
             step={5}
             min={5}
             max={60}
+            disabled={!!activeCycle}
             {...register("minutesAmount", { valueAsNumber: true })}
           />
           <span>Minutos.</span>
@@ -137,10 +174,17 @@ export function Home() {
           <span>{seconds[1]}</span>
         </CountdownContainer>
 
-        <StartCountdownButton disabled={isSubmitDisabled} type="submit">
-          Começar
-          <Play size={24} />
-        </StartCountdownButton>
+        {activeCycle ? (
+          <StopCountdownButton onClick={handleInterruptCycle} type="button">
+            Interromper
+            <HandPalm size={24} />
+          </StopCountdownButton>
+        ) : (
+          <StartCountdownButton disabled={isSubmitDisabled} type="submit">
+            Começar
+            <Play size={24} />
+          </StartCountdownButton>
+        )}
       </form>
     </HomeContainer>
   );
