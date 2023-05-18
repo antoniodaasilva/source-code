@@ -38,4 +38,5 @@ export const PriceHighLight = styled.span<PriceHighLightProps>`
     props.variant === "income"
       ? props.theme["green-300"]
       : props.theme["red-300"]};
-`;
+    
+      `;
