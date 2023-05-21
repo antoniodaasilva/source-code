@@ -14,7 +14,7 @@ export const SummaryContainer = styled.section`
 `;
 
 interface SummaryCardProps {
-  variant?: 'green'
+  variant?: "green";
 }
 
 export const SummaryCard = styled.div<SummaryCardProps>`

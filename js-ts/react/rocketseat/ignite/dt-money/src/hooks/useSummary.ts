@@ -23,5 +23,5 @@ export function useSummary() {
     }
   );
 
-  return summary
+  return summary;
 }

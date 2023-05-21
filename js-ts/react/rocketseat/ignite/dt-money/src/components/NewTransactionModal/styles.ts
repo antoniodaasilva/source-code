@@ -77,6 +77,7 @@ export const CloseButton = styled(Dialog.Close)`
   cursor: pointer;
   color: ${({ theme }) => theme["gray-500"]};
 `;
+
 export const TransactionType = styled(RadioGroup.Root)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
