@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import * as RadioGroup from '@radix-ui/react-radio-group'
+import * as RadioGroup from "@radix-ui/react-radio-group";
 
 import { styled } from "styled-components";
 
@@ -55,7 +55,12 @@ export const Content = styled(Dialog.Content)`
 
     cursor: pointer;
 
-    &:hover {
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
       background: ${({ theme }) => theme["green-700"]};
       transition: all ease 0.2s;
     }
@@ -102,14 +107,15 @@ export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButt
         : props.theme["red-300"]};
   }
 
-  &[data-state='unchecked']:hover {
+  &[data-state="unchecked"]:hover {
     transition: all ease 0.2s;
-    background: ${({theme}) => theme["gray-600"]};
+    background: ${({ theme }) => theme["gray-600"]};
   }
 
-  &[data-state='checked'] {
+  &[data-state="checked"] {
     color: ${({ theme }) => theme.white};
-    background: ${({theme, variant }) => variant === 'income' ? theme["green-500"] : theme["red-500"] };
+    background: ${({ theme, variant }) =>
+      variant === "income" ? theme["green-500"] : theme["red-500"]};
 
     svg {
       color: ${({ theme }) => theme.white};
