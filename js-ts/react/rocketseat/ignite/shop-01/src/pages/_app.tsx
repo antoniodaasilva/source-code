@@ -4,8 +4,6 @@ import { AppProps } from "next/app";
 import logo from "../assets/logo.svg";
 import Image from "next/image";
 
-
-
 globalStyles()
 export default function App({ Component, pageProps }: AppProps) {
   return (
