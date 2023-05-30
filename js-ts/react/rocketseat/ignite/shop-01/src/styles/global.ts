@@ -7,12 +7,12 @@ export const globalStyles = globalCss({
   },
 
   body: {
-    background: '$gray900',
-    color: '$gray100'
+    background: "$gray900",
+    color: "$gray100",
   },
 
-  'body, input, textarea, button': {
-    fontFamily: 'Roboto',
-    fontWeight: 400
-  }
-})
+  "body, input, textarea, button": {
+    fontFamily: "Roboto",
+    fontWeight: 400,
+  },
+});

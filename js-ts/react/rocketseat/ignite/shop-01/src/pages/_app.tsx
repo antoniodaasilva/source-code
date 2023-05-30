@@ -4,7 +4,7 @@ import { AppProps } from "next/app";
 import logo from "../assets/logo.svg";
 import Image from "next/image";
 
-globalStyles()
+globalStyles();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Container>
@@ -13,5 +13,5 @@ export default function App({ Component, pageProps }: AppProps) {
       </Header>
       <Component {...pageProps} />
     </Container>
-  )
+  );
 }

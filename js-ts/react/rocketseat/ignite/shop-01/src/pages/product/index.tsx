@@ -1,9 +1,9 @@
-import { styled } from "../../styles"
+import { styled } from "../../styles";
 
-const Button = styled('button', {
-  backgroundColor: '$green500'
-})
+const Button = styled("button", {
+  backgroundColor: "$green500",
+});
 
 export default function Product() {
-  return <h1>Produto</h1>
+  return <h1>Produto</h1>;
 }
