@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { styled } from "../../styles";
 import {
   ImageContainer,
@@ -40,6 +40,14 @@ export default function Product({product}: ProductProps) {
       <button>Compra agora</button>
     </ProductDetails>
   </ProductContainer>;
+}
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { id: '2'} }
+    ],
+    fallback: false
+  }
 }
 
 export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
