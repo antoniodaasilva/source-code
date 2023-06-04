@@ -16,14 +16,14 @@ export const ImageContainer = styled("main", {
   height: 656,
   background: "linear-gradient(180deg, #1ea483 0%, #7465d4 100%)",
   borderRadius: 8,
-  padding: '0.25rem',
+  padding: "0.25rem",
   display: "flex",
-  alignItems: 'center',
-  justifyContent: 'center',
+  alignItems: "center",
+  justifyContent: "center",
 
   img: {
-    objectFit: 'cover'
-  }
+    objectFit: "cover",
+  },
 });
 
 export const ProductDetails = styled("main", {
@@ -60,7 +60,12 @@ export const ProductDetails = styled("main", {
     fontWeight: "bold",
     fontSize: "$md",
 
-    "&:hover": {
+    "&:disabled": {
+      opacity: 0.6,
+      cursor: "not-allowed",
+    },
+
+    "&:not(:disabled):hover": {
       background: "$green300",
     },
   },
