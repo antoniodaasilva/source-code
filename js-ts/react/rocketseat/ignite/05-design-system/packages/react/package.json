@@ -1,5 +1,5 @@
 {
-  "name": "@dbrito-ui/tokens",
+  "name": "@dbrito-ui/react",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -8,12 +8,12 @@
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
-
   },
   "keywords": [],
   "author": "antoniodebrito",
   "license": "ISC",
   "devDependencies": {
+    "@dbrito-ui/tokens": "*",
     "tsup": "^6.7.0",
     "typescript": "^5.1.3"
   }
