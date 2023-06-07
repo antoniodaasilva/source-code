@@ -7,13 +7,16 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],
   "author": "antoniodebrito",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@dbrito-ui/ts-config": "*",
     "@dbrito-ui/tokens": "*",
+    "@dbrito-ui/eslint-config": "*",
     "tsup": "^6.7.0",
     "typescript": "^5.1.3"
   }
