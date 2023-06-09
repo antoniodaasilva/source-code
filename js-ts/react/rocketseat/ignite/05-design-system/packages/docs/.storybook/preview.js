@@ -1,4 +1,6 @@
-/** @type { import('@storybook/react').Preview } */
+import {themes} from '@storybook/theming'
+
+ /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,6 +11,9 @@ const preview = {
       },
     },
   },
+  docs: {
+    theme: themes.dark
+  }
 };
 
 export default preview;
