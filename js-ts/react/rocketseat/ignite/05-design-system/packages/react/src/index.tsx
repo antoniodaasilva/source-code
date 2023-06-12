@@ -1,3 +1,5 @@
+export * from './components/box'
+
 import { ComponentProps } from 'react'
 import { styled } from './styles'
 
@@ -28,4 +30,4 @@ export const Button = styled('button', {
   },
 })
 
-export type ButtonPorps = ComponentProps<typeof Button>
+export type ButtonProps = ComponentProps<typeof Button>
