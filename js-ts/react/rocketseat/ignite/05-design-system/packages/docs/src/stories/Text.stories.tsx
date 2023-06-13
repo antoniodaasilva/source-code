@@ -3,7 +3,7 @@ import type { StoryObj, Meta } from '@storybook/react'
 import { Text, TextProps } from '@dbrito-ui/react'
 
 export default {
-  title: 'Typography/Box',
+  title: 'Typography/Text',
   component: Text,
   args: {
     children: 'Example text',
