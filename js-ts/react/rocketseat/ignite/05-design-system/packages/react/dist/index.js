@@ -49,6 +49,7 @@ var src_exports = {};
 __export(src_exports, {
   Avatar: () => Avatar2,
   Box: () => Box,
+  Button: () => Button,
   Heading: () => Heading,
   Text: () => Text
 });
@@ -270,10 +271,83 @@ function Avatar2() {
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {}) })
   ] });
 }
+
+// src/components/Button.tsx
+var Button = styled("button", {
+  all: "unset",
+  borderRadius: "$sm",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  fontFamily: "$default",
+  textAlign: "center",
+  minWidth: 120,
+  boxSizing: "border-box",
+  padding: "0 $54",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  cursor: "pointer",
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "$white",
+        background: "$ignite500",
+        "&:not(:disable):hover": {
+          background: "$ignite300"
+        },
+        "&:disabled": {
+          background: "$gray200"
+        }
+      },
+      secondary: {
+        color: "$ignite300",
+        border: "2px solid $ignite500",
+        "&:not(:disable):hover": {
+          background: "$ignite500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200"
+        }
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:not(:disable):hover": {
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray600"
+        }
+      }
+    },
+    size: {
+      sm: {
+        height: 38
+      },
+      md: {
+        height: 46
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
   Box,
+  Button,
   Heading,
   Text
 });
