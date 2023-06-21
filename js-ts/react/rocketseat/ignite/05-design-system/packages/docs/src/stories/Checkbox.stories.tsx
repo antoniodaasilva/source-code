@@ -1,0 +1,38 @@
+
+import type { StoryObj, Meta } from '@storybook/react'
+
+import { Box, Text, Checkbox, CheckboxProps } from '@dbrito-ui/react'
+
+export default {
+  title: 'Form/Checkbox',
+  component: Checkbox,
+  args: {},
+  decorators: [
+    (Story) => {
+      return (
+        <Box
+          as="label"
+          css={{ display: 'flex', flexDirection: 'row', gap: '$2' }}
+        >
+          {Story()}
+          <Text size="sm">Accept terms of use</Text>
+        </Box>
+      )
+    },
+  ],
+} as Meta<CheckboxProps>
+
+// eslint-disable-next-line no-undef
+export const Primary: StoryObj<CheckboxProps> = {}
+
+export const Disabled: StoryObj<CheckboxProps> = {
+  args: {
+    disabled: true,
+  },
+}
+
+export const WithPrefix: StoryObj<CheckboxProps> = {
+  args: {
+    prefix: 'cal.com/',
+  },
+}

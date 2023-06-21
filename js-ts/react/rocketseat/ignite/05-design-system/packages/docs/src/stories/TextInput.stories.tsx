@@ -17,8 +17,8 @@ export default {
           {Story()}
         </Box>
       )
-    }
-  ], 
+    },
+  ],
 } as Meta<TextInputProps>
 
 // eslint-disable-next-line no-undef
