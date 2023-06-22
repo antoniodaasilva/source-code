@@ -9,6 +9,14 @@ export default {
     src: 'https://github.com/antoniodebrito.png',
     alt: 'Antonio Brito',
   },
+
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 // eslint-disable-next-line no-undef
