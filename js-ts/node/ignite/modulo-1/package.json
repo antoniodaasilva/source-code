@@ -1,0 +1,17 @@
+{
+  "name": "modulo-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "antoniodebrito",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
