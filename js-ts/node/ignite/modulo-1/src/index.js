@@ -41,12 +41,16 @@ app.post('/account', (req, res) => {
 })
 
 //método para obter extrato
-app.get("/statement/:cpf", (req, res) => {
+app.get("/statement", (req, res) => {
   //obter CPF da requisição
-  const {cpf} = req.params
+  const {cpf} = req.headers
 
   //verificar se esse CPF esta cadastrado
   const customer = customers.find(customer => customer.cpf === cpf)
+
+  if(!customer) {
+    return response.status(400).json({ error: "Customer not found "})
+  }
 
   //caso esteja retornar extrato do cliente
   return res.json(customer.statement)
